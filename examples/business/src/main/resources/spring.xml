@@ -7,4 +7,5 @@
 
     <context:component-scan base-package="io.kuo.tahoe"/>
 
+    <import resource="classpath*:/spring-*.xml" />
 </beans>

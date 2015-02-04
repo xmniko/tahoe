@@ -1,4 +1,4 @@
-package io.kuo.tahoe.user.resource;
+package io.kuo.tahoe.resource;
 
 import io.kuo.tahoe.test.BaseTest;
 import org.junit.Test;

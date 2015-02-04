@@ -8,15 +8,15 @@ import org.glassfish.jersey.server.spring.scope.RequestContextFilter;
 /**
  * Created by nikog on 1/30/2015.
  */
-public class GlobalResourceConfig extends ResourceConfig {
+public class TahoeApplication extends ResourceConfig {
 
-    public GlobalResourceConfig() {
+    public TahoeApplication() {
         super(JacksonFeature.class, JsonObjectMapperProvider.class);
         super.setApplicationName("tahoe");
 
         register(RequestContextFilter.class);
         register(LoggingFilter.class);
 
-        packages("io.kuo.tahoe.resource");
+        packages("io.kuo.tahoe");
     }
 }
