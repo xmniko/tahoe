@@ -1,11 +1,9 @@
-package io.kuo.tahoe.exception;
-
-import javax.validation.ValidationException;
+package io.kuo.jersey.support.exception;
 
 /**
  * @author nikog
  */
-public class ResourceNotFoundException extends ValidationException {
+public class ResourceNotFoundException extends RuntimeException {
 
     public ResourceNotFoundException() {
         super();

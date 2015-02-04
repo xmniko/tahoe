@@ -8,7 +8,7 @@
         <artifactId>tahoe-modules</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>tahoe-core</artifactId>
+    <artifactId>core</artifactId>
     <name>Tahoe :: Module :: core</name>
 
     <build>

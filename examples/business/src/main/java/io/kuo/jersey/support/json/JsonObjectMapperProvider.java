@@ -1,4 +1,4 @@
-package io.kuo.tahoe;
+package io.kuo.jersey.support.json;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;

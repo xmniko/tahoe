@@ -16,24 +16,39 @@
     </build>
 
     <properties>
+        <jersey.version>2.15</jersey.version>
+        <jackson.version>1.9.13</jackson.version>
         <spring.version>4.1.4.RELEASE</spring.version>
         <hibernate.version>4.3.8.Final</hibernate.version>
-        <jersey.version>2.15</jersey.version>
         <logback.version>1.1.2</logback.version>
         <slf4j.version>1.7.7</slf4j.version>
+        <commons-lang3-version>3.3.2</commons-lang3-version>
+        <guava-version>18.0</guava-version>
     </properties>
 
     <dependencies>
         <!-- Modules -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>tahoe-core</artifactId>
+            <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>tahoe-utils</artifactId>
+            <artifactId>utils</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <!-- Common Utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava-version}</version>
         </dependency>
 
         <!-- Log -->
@@ -141,7 +156,14 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- DB -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>1.1.7</version>
         </dependency>
 
         <!-- Spring -->
@@ -174,13 +196,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
-        </dependency>
-
-        <!-- DB -->
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>1.1.7</version>
         </dependency>
 
         <!-- Hibernate -->
@@ -233,6 +248,15 @@
             <type>pom</type>
             <scope>test</scope>
         </dependency>
+
+        <!-- Provider -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

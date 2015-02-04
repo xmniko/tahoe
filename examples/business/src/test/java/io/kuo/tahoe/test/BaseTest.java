@@ -1,6 +1,6 @@
 package io.kuo.tahoe.test;
 
-import io.kuo.tahoe.GlobalResourceConfig;
+import io.kuo.tahoe.TahoeApplication;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
@@ -18,7 +18,7 @@ public class BaseTest extends JerseyTest {
         enable(TestProperties.DUMP_ENTITY);
 
         // Create an instance of MyApplication ...
-        ResourceConfig resourceConfig = new GlobalResourceConfig();
+        ResourceConfig resourceConfig = new TahoeApplication();
         resourceConfig.property("contextConfigLocation", "classpath:spring-test.xml");
 
         return resourceConfig;
