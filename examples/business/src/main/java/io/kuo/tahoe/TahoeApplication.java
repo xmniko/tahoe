@@ -1,10 +1,13 @@
 package io.kuo.tahoe;
 
-import io.kuo.jersey.support.JsonObjectMapperProvider;
+import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
+import io.kuo.support.jersey.JsonObjectMapperProvider;
 import org.glassfish.jersey.filter.LoggingFilter;
-import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.spring.scope.RequestContextFilter;
+
+import javax.ws.rs.ext.MessageBodyReader;
+import javax.ws.rs.ext.MessageBodyWriter;
 
 /**
  * Created by nikog on 1/30/2015.
@@ -12,12 +15,13 @@ import org.glassfish.jersey.server.spring.scope.RequestContextFilter;
 public class TahoeApplication extends ResourceConfig {
 
     public TahoeApplication() {
-        super(JacksonFeature.class, JsonObjectMapperProvider.class);
         super.setApplicationName("tahoe");
 
+        register(JsonObjectMapperProvider.class);
         register(RequestContextFilter.class);
         register(LoggingFilter.class);
+        register(JacksonJaxbJsonProvider.class, new Class[]{MessageBodyReader.class, MessageBodyWriter.class});
 
-        packages("io.kuo.jersey,io.kuo.tahoe.resource");
+        packages("io.kuo.tahoe.resource,io.kuo.support.jersey,com.fasterxml.jackson.jaxrs.base");
     }
 }

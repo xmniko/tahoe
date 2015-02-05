@@ -2,11 +2,8 @@ package io.kuo.tahoe.resource;
 
 import io.kuo.tahoe.entity.User;
 import io.kuo.tahoe.service.UserService;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;

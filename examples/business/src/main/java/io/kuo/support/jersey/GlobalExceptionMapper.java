@@ -1,6 +1,6 @@
-package io.kuo.jersey.support;
+package io.kuo.support.jersey;
 
-import io.kuo.utils.GsonUtil;
+import io.kuo.utils.JsonUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +11,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author nikog
@@ -26,7 +28,7 @@ public class GlobalExceptionMapper implements ExceptionMapper<RuntimeException> 
     public Response toResponse(RuntimeException exception) {
         ExceptionResponse exceptionResponse = sanitize(exception, httpServletRequest);
 
-        String entity = GsonUtil.bean2json(exceptionResponse, ExceptionResponse.class);
+        String entity = JsonUtil.bean2json(exceptionResponse, ExceptionResponse.class);
         return Response.status(exceptionResponse.getStatus())
                 .entity(entity).type(MediaType.APPLICATION_JSON).build();
     }

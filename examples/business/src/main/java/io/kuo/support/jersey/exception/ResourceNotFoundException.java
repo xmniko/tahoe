@@ -1,4 +1,4 @@
-package io.kuo.jersey.support.exception;
+package io.kuo.support.jersey.exception;
 
 /**
  * @author nikog

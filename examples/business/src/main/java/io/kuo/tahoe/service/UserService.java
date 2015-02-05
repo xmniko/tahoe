@@ -1,7 +1,7 @@
 package io.kuo.tahoe.service;
 
 import io.kuo.tahoe.entity.User;
-import io.kuo.jersey.support.exception.ResourceNotFoundException;
+import io.kuo.support.jersey.exception.ResourceNotFoundException;
 import io.kuo.tahoe.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
