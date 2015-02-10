@@ -1,51 +1,94 @@
 package io.kuo.tahoe.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.collect.Lists;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by nikog on 2/4/2015.
  */
 @Entity
-public class User extends BaseEntity {
+@Table(name = "sys_user")
+public class User extends IdEntity {
+    private String email;
+    private String plainPassword;
+    private String password;
+    private String salt;
+    private String nickName;
+    private String status;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private List<Role> roles = Lists.newArrayList();
 
-    private String firstName;
-    private String lastName;
-
-    public Long getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getFirstName() {
-        return firstName;
+    @Transient
+    @JsonIgnore
+    public String getPlainPassword() {
+        return plainPassword;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPlainPassword(String plainPassword) {
+        this.plainPassword = plainPassword;
     }
 
-    public String getLastName() {
-        return lastName;
+    @JsonIgnore
+    public String getPassword() {
+        return password;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @JsonIgnore
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "sys_user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    @Fetch(FetchMode.JOIN)
+    @OrderBy("id ASC")
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roleList) {
+        this.roles = roleList;
     }
 
     @Override
     public String toString() {
-        return String.format(
-                "Customer[id=%d, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+        return String.format("User[id=%d, email='%s', nickName='%s']", id, email, nickName);
     }
 }

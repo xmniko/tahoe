@@ -24,10 +24,12 @@
         <commons-lang3-version>3.3.2</commons-lang3-version>
         <guava-version>18.0</guava-version>
         <jackson.version>2.5.0</jackson.version>
+        <shiro.version>1.2.3</shiro.version>
+        <mariadb.version>1.1.7</mariadb.version>
     </properties>
 
     <dependencies>
-        <!-- Modules -->
+        <!-- Modules begin -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>core</artifactId>
@@ -38,8 +40,9 @@
             <artifactId>utils</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- Modules end -->
 
-        <!-- Common Utils -->
+        <!-- Common Utils begin -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -50,8 +53,9 @@
             <artifactId>guava</artifactId>
             <version>${guava-version}</version>
         </dependency>
+        <!-- Common Utils end -->
 
-        <!-- Log -->
+        <!-- Log begin -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
@@ -87,8 +91,9 @@
             <artifactId>log4j-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        <!-- Log end -->
 
-        <!-- Jersey -->
+        <!-- Jersey begin -->
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-common</artifactId>
@@ -148,13 +153,9 @@
             <artifactId>jersey-container-servlet-core</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.glassfish.jersey.media</groupId>-->
-            <!--<artifactId>jersey-media-json-jackson</artifactId>-->
-            <!--<version>${jersey.version}</version>-->
-        <!--</dependency>-->
+        <!-- Jersey end -->
 
-        <!-- Jackson -->
+        <!-- Jackson begin -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -170,15 +171,17 @@
             <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+        <!-- Jackson end -->
 
-        <!-- DB -->
+        <!-- DB begin -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
-            <version>1.1.7</version>
+            <version>${mariadb.version}</version>
         </dependency>
+        <!-- DB end -->
 
-        <!-- Spring -->
+        <!-- Spring begin -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -209,8 +212,9 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!-- Spring end -->
 
-        <!-- Hibernate -->
+        <!-- Hibernate begin -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -227,20 +231,45 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Hibernate end -->
 
-        <!-- JPA -->
+        <!-- JPA begin -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>1.0.1.Final</version>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>1.7.2.RELEASE</version>
         </dependency>
+        <!-- JPA end -->
 
-        <!-- Test -->
+        <!-- Security begin -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <!-- Security end -->
+
+        <!-- Testing begin -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -260,14 +289,16 @@
             <type>pom</type>
             <scope>test</scope>
         </dependency>
+        <!-- Testing end -->
 
-        <!-- Provider -->
+        <!-- Provider begin -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Provider end -->
 
     </dependencies>
 

@@ -23,7 +23,7 @@ public class JsonObjectMapperProvider implements ContextResolver<ObjectMapper> {
 
     private static ObjectMapper createDefaultMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
         objectMapper.setDateFormat(new SimpleDateFormat(DateFormatUtils.ISO_DATETIME_FORMAT.getPattern()));
         return objectMapper;
     }

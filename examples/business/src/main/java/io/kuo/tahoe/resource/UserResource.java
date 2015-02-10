@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by nikog on 1/30/2015.
  */
-@Path("/user")
+@Path("/v1/user")
 public class UserResource {
 
     @Autowired
