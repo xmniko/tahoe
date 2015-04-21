@@ -9,9 +9,52 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>build-tools</module>
         <module>modules</module>
         <module>examples</module>
     </modules>
+
+    <build>
+        <plugins>
+            <!-- check style -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven.checkstyle.plugin.version}</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <suppressionsLocation>checkstyle-suppression.xml</suppressionsLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>${project.groupId}</groupId>
+                        <artifactId>tahoe-build-tools</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven.checkstyle.plugin.version}</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <headerLocation>LICENSE.txt</headerLocation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <description>A Spring Framework based JavaEE application reference architecture.</description>
     <url>http://www.github.com/guuuo/tahoe</url>
@@ -65,5 +108,7 @@
         <!-- use UTF-8 for everything -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.checkstyle.plugin.version>2.15</maven.checkstyle.plugin.version>
+        <checkstyle.version>5.3</checkstyle.version>
     </properties>
 </project>

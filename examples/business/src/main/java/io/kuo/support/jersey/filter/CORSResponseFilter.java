@@ -3,7 +3,6 @@ package io.kuo.support.jersey.filter;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
@@ -34,21 +33,19 @@ public class CORSResponseFilter implements ContainerResponseFilter {
         String origin = getOrigin(requestContext);
 
         // process origin request only if it is on header and we have a list of allowed origins
-        if (origin != null && allowOrigin != null) {
-            if (isOriginAllowed(origin)) {
-                MultivaluedMap<String, Object> responseHeaders = responseContext.getHeaders();
+        if (origin != null && allowOrigin != null && isOriginAllowed(origin)) {
+            MultivaluedMap<String, Object> responseHeaders = responseContext.getHeaders();
 
-                // allow ulrs coming the request origin
-                responseHeaders.add("Access-Control-Allow-Origin", origin);
-                responseHeaders.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+            // allow ulrs coming the request origin
+            responseHeaders.add("Access-Control-Allow-Origin", origin);
+            responseHeaders.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
 
-                // add all headers for pre-flight
-                MultivaluedMap<String, String> requestHeaders = requestContext.getHeaders();
-                List<String> allowHeaders = requestHeaders.get("Access-Control-Request-Headers");
-                if (allowHeaders != null && allowHeaders.size() > 0) {
-                    // just echo what is on the request
-                    responseHeaders.add("Access-Control-Allow-Headers", StringUtils.join(allowHeaders, ','));
-                }
+            // add all headers for pre-flight
+            MultivaluedMap<String, String> requestHeaders = requestContext.getHeaders();
+            List<String> allowHeaders = requestHeaders.get("Access-Control-Request-Headers");
+            if (allowHeaders != null && allowHeaders.size() > 0) {
+                // just echo what is on the request
+                responseHeaders.add("Access-Control-Allow-Headers", StringUtils.join(allowHeaders, ','));
             }
         }
     }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import javax.ws.rs.ext.ContextResolver;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class JsonObjectMapperProvider implements ContextResolver<ObjectMapper> {
