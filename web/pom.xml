@@ -5,17 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.kuo</groupId>
-        <artifactId>tahoe-modules</artifactId>
+        <artifactId>tahoe</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>core</artifactId>
-    <name>Tahoe :: Module :: core</name>
+    <artifactId>web</artifactId>
+    <name>Tahoe :: Module :: web</name>
 
+    <packaging>war</packaging>
     <build>
-        <finalName>tahoe-core</finalName>
+        <finalName>tahoe</finalName>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>business</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 

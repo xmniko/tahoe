@@ -1,7 +1,6 @@
 package io.kuo.tahoe.resource;
 
 import io.kuo.tahoe.test.BaseTest;
-import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
