@@ -8,7 +8,7 @@
         <artifactId>tahoe</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>web</artifactId>
+    <artifactId>tahoe-web</artifactId>
     <name>Tahoe :: Module :: web</name>
 
     <packaging>war</packaging>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>business</artifactId>
+            <artifactId>tahoe-business</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

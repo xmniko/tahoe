@@ -8,12 +8,8 @@
         <artifactId>tahoe</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>utils</artifactId>
+    <artifactId>tahoe-utils</artifactId>
     <name>Tahoe :: Module :: utils</name>
-
-    <build>
-        <finalName>tahoe-core</finalName>
-    </build>
 
     <properties>
         <jackson.version>2.5.0</jackson.version>

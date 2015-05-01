@@ -8,12 +8,8 @@
         <artifactId>tahoe</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>business</artifactId>
+    <artifactId>tahoe-business</artifactId>
     <name>Tahoe :: Module :: business</name>
-
-    <build>
-        <finalName>tahoe-business</finalName>
-    </build>
 
     <properties>
         <jersey.version>2.15</jersey.version>
@@ -32,12 +28,7 @@
         <!-- Modules begin -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>utils</artifactId>
+            <artifactId>tahoe-utils</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- Modules end -->
