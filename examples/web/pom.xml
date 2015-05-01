@@ -13,7 +13,7 @@
 
     <packaging>war</packaging>
     <build>
-        <finalName>tahoe-web</finalName>
+        <finalName>tahoe</finalName>
     </build>
 
     <dependencies>

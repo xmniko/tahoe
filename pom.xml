@@ -16,6 +16,18 @@
 
     <build>
         <plugins>
+            <!-- compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
             <!-- check style -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -39,6 +51,38 @@
                         <version>${project.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <!-- find bugs -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${findbugs-maven-plugin.version}</version>
+            </plugin>
+
+            <!-- pmd -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.4</version>
+                <configuration>
+                    <failurePriority>5</failurePriority>
+                    <failOnViolation>true</failOnViolation>
+                    <targetJdk>1.8</targetJdk>
+                    <verbose>true</verbose>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <rulesets>
+                        <ruleset>http://sjmvn01:8080/nexus/content/groups/public/com/ehi/ruleset/pmd.xml</ruleset>
+                    </rulesets>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -110,5 +154,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.checkstyle.plugin.version>2.15</maven.checkstyle.plugin.version>
         <checkstyle.version>5.3</checkstyle.version>
+        <findbugs-maven-plugin.version>3.0.1</findbugs-maven-plugin.version>
     </properties>
 </project>
