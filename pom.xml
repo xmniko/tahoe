@@ -73,7 +73,7 @@
                     <verbose>true</verbose>
                     <outputEncoding>UTF-8</outputEncoding>
                     <rulesets>
-                        <ruleset>http://sjmvn01:8080/nexus/content/groups/public/com/ehi/ruleset/pmd.xml</ruleset>
+                        <ruleset>${basedir}/../build-tools/src/main/resources/pmd.xml</ruleset>
                     </rulesets>
                 </configuration>
                 <executions>
