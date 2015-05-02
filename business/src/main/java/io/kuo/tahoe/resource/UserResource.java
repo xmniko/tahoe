@@ -9,15 +9,22 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 /**
  * Created by nikog on 1/30/2015.
  */
-@Path("/v1/user")
+@Path("/v1/users")
 public class UserResource {
 
     @Autowired
     UserService userService;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Iterable<User> getUsers() {
+        return userService.loadAll();
+    }
 
     @GET
     @Path("/{userId}")

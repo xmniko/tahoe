@@ -16,5 +16,5 @@
         </property>
     </bean>
 
-    <import resource="classpath*:/spring-*.xml" />
+    <import resource="classpath*:/spring/spring-*.xml" />
 </beans>

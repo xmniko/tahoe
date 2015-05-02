@@ -6,6 +6,9 @@ import io.kuo.tahoe.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Created by nikog on 2/4/2015.
  */
@@ -20,6 +23,10 @@ public class UserService {
             throw new ResourceNotFoundException(String.format("User(id:%s) not found.", id));
         }
         return user;
+    }
+
+    public Iterable<User> loadAll() {
+        return userRepository.findAll();
     }
 
     public User findByEmail(String email) {
