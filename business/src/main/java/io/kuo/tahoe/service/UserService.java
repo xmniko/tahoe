@@ -17,7 +17,7 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public User loadById(Long id) {
+    public User findById(Long id) {
         User user = userRepository.findOne(id);
         if (user == null) {
             throw new ResourceNotFoundException(String.format("User(id:%s) not found.", id));
@@ -25,7 +25,7 @@ public class UserService {
         return user;
     }
 
-    public Iterable<User> loadAll() {
+    public Iterable<User> findAll() {
         return userRepository.findAll();
     }
 

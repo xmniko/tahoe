@@ -21,14 +21,14 @@ public class UserResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Iterable<User> getUsers() {
-        return userService.loadAll();
+        return userService.findAll();
     }
 
     @GET
     @Path("/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
     public User getUserById(@PathParam("userId") Long userId) {
-        return userService.loadById(userId);
+        return userService.findById(userId);
     }
 
     @POST
@@ -39,7 +39,7 @@ public class UserResource {
         user.setNickName(nickName);
         user.setEmail(email);
         user.setPassword(password);
-        user.setCreatedBy("");
+        user.setCreatedBy("Niko.G");
         user.setCreatedAt(new Date());
 
         return userService.save(user);
@@ -50,7 +50,7 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public User updateUserById(@PathParam("userId") Long userId, @FormParam("nickName") String nickName, @FormParam("email") String email, @FormParam("password") String password) {
-        User user = userService.loadById(userId);
+        User user = userService.findById(userId);
         if (user != null) {
             user.setNickName(nickName);
             user.setEmail(email);
