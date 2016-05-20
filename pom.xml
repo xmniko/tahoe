@@ -85,6 +85,27 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- test coverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -157,5 +178,6 @@
         <maven.checkstyle.plugin.version>2.15</maven.checkstyle.plugin.version>
         <checkstyle.version>5.3</checkstyle.version>
         <findbugs-maven-plugin.version>3.0.1</findbugs-maven-plugin.version>
+        <jacoco.version>0.7.6.201602180812</jacoco.version>
     </properties>
 </project>
