@@ -132,11 +132,11 @@
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/guuuo/tahoe/issues</url>
+        <url>https://github.com/xmniko/tahoe/issues</url>
     </issueManagement>
 
     <scm>
-        <url>https://github.com/guuuo/tahoe</url>
+        <url>https://github.com/xmniko/tahoe</url>
         <connection>scm:git:git://github.com/guuuo/tahoe.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:guuuo/tahoe.git</developerConnection>
     </scm>
