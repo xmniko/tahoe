@@ -99,7 +99,7 @@
                     </execution>
                     <execution>
                         <id>report</id>
-                        <phase>prepare-package</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
@@ -124,7 +124,7 @@
     </reporting>
 
     <description>A Spring Framework based JavaEE application reference architecture.</description>
-    <url>http://www.github.com/guuuo/tahoe</url>
+    <url>http://www.github.com/guuuuo/tahoe</url>
     <inceptionYear>2015</inceptionYear>
     <organization>
         <name>Kuo</name>
@@ -133,7 +133,7 @@
 
     <developers>
         <developer>
-            <id>guuuo</id>
+            <id>guuuuo</id>
             <name>Niko.G</name>
             <email>niko.guo at gmail.com</email>
             <organization>Kuo</organization>
@@ -153,13 +153,13 @@
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/xmniko/tahoe/issues</url>
+        <url>https://github.com/guuuuo/tahoe/issues</url>
     </issueManagement>
 
     <scm>
-        <url>https://github.com/xmniko/tahoe</url>
-        <connection>scm:git:git://github.com/guuuo/tahoe.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:guuuo/tahoe.git</developerConnection>
+        <url>https://github.com/guuuuo/tahoe</url>
+        <connection>scm:git:git://github.com/guuuuo/tahoe.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:guuuuo/tahoe.git</developerConnection>
     </scm>
 
     <repositories>
@@ -178,6 +178,6 @@
         <maven.checkstyle.plugin.version>2.15</maven.checkstyle.plugin.version>
         <checkstyle.version>5.3</checkstyle.version>
         <findbugs-maven-plugin.version>3.0.1</findbugs-maven-plugin.version>
-        <jacoco.version>0.7.6.201602180812</jacoco.version>
+        <jacoco.version>0.8.2</jacoco.version>
     </properties>
 </project>
