@@ -12,7 +12,7 @@
     <name>Tahoe :: Module :: utils</name>
 
     <properties>
-        <jackson.version>2.5.0</jackson.version>
+        <jackson.version>2.11.1</jackson.version>
         <commons-lang3-version>3.3.2</commons-lang3-version>
         <commons-codec-version>1.9</commons-codec-version>
         <guava-version>18.0</guava-version>
